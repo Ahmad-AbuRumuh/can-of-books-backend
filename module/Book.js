@@ -6,8 +6,7 @@ const bookSchema = new mongoose.Schema({
     title: String,
     description: String,
     status: String,
-    email: String,
-    ownerName: String
+    email: String
 });
 const bookModel = mongoose.model('book', bookSchema);
 
@@ -16,28 +15,24 @@ function seedbookInformation() {
         title: 'math',
         description: 'mmmmmmmmmm',
         status: 'm',
-        email: 'ahmad@gmail.com',
-        ownerName: 'ahmad '
+        email: 'ahmadromoh@gmail.com',
     })
     const bookTwo = new bookModel({
         title: 'science',
         description: 'sssssssssss',
         status: 's',
-        email: 'zaid@gmail.com',
-        ownerName: 'zaid '
+        email: 'ahmadromoh@gmail.com',
     })
     const bookThree = new bookModel({
         title: 'physics',
         description: 'pppppp',
         status: 'p',
-        email: 'waleed@gmail.com',
-        ownerName: 'waleed'
+        email: 'ahmadromoh@gmail.com',
     })
 
     bookOne.save();
     bookTwo.save();
     bookThree.save();
 }
-module.exports = {
-    bookModel
-}
+// seedbookInformation();
+module.exports = bookModel;
